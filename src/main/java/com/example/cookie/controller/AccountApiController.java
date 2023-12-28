@@ -20,12 +20,12 @@ public class AccountApiController { //로그인 요청 처리
     //@RequiredArgsConstructor 생성자메소드 필요
 
     @PostMapping("/login")//로그인 로직
-    public String login(
+    public void login(
             @RequestBody
             LoginRequest loginRequest,
-            HttpServletResponse httpServletResponse,
-            HttpSession httpSession
+            HttpServletResponse httpServletResponse
+           // HttpSession httpSession
     ){
-            return loginService.login(loginRequest, httpServletResponse);
+            //return loginService.login(loginRequest, httpServletResponse);
     }
 }

@@ -29,6 +29,7 @@ public class UserRepository {
                 .stream()
                 .filter(it->{
                     return it.getName().equals(name);
+                    //name을 검색해서 매개변수(String name)과 비교
                 })
                 .findFirst();
     }

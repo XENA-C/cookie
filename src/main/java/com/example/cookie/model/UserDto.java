@@ -2,7 +2,9 @@ package com.example.cookie.model;
 
 import lombok.*;
 
-@Builder @Getter @Setter @ToString
+@Builder
+@Getter @Setter
+@ToString
 @NoArgsConstructor @AllArgsConstructor
 public class UserDto {
 
