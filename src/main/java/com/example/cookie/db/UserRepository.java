@@ -12,7 +12,7 @@ import java.util.UUID;
 @Service
 public class UserRepository {
 
-    private List<UserDto> userList = new ArrayList<>();
+    private final List<UserDto> userList = new ArrayList<>();
 
 
     public Optional<UserDto> findById(String id){

@@ -26,6 +26,6 @@ public class AccountApiController { //로그인 요청 처리
             HttpServletResponse httpServletResponse
            // HttpSession httpSession
     ){
-            //return loginService.login(loginRequest, httpServletResponse);
+            loginService.login(loginRequest, httpServletResponse);
     }
 }
