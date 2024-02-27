@@ -21,13 +21,14 @@ public class LoginService {
             var id = loginRequest.getId();
             var pw = loginRequest.getPassword();
 
-            var optionalUser = userRepository.findByName(id); //로그인 id
+        //로그인 id
+        var optionalUser = userRepository.findByName(id);
 
         if(optionalUser.isPresent()){ //사용자정보 찾으면 Cookie 저장
 
                 var userDto = optionalUser.get();
 
-                if (userDto.getPassword().equals(pw)){
+                if (userDto.getPassword().equals(pw)){ //패스워드가 동일하면
                     //cookie에 해당 정보 저장
                     var cookie = new Cookie("authorization-cookie", userDto.getId());
                     cookie.setDomain("localhost"); //특정 도메인에서만 쿠키 사용
@@ -36,7 +37,7 @@ public class LoginService {
 //                  cookie.setSecure(true); // Https 에서만 사용(Http X)
                     cookie.setMaxAge(-1); //사용기한 (-1: 세션 유지될 동안)
 
-                    httpServletResponse.addCookie(cookie); //컨트롤러에서 넘어온 http리스폰스에 쿠키 추가
+                    httpServletResponse.addCookie(cookie); //컨트롤러에서 넘어온 httpResponse 쿠키 추가
                    // return userDto.getId();
                 }
 

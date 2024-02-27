@@ -23,7 +23,7 @@ public class AccountApiController { //로그인 요청 처리
     public void login(
             @RequestBody
             LoginRequest loginRequest,
-            HttpServletResponse httpServletResponse
+            HttpServletResponse httpServletResponse //httpResponse 구현객체
            // HttpSession httpSession
     ){
             loginService.login(loginRequest, httpServletResponse);

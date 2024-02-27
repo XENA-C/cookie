@@ -14,7 +14,6 @@ public class UserRepository {
 
     private final List<UserDto> userList = new ArrayList<>();
 
-
     public Optional<UserDto> findById(String id){
         return userList
                 .stream()
