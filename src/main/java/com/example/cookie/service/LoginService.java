@@ -33,8 +33,8 @@ public class LoginService {
                     var cookie = new Cookie("authorization-cookie", userDto.getId());
                     cookie.setDomain("localhost"); //특정 도메인에서만 쿠키 사용
                     cookie.setPath("/"); //특정 경로 설정
-//                  cookie.setHttpOnly(true); //JavaScript 에서 쿠키정보를 읽을 수 없도록 보안처리
-//                  cookie.setSecure(true); // Https 에서만 사용(Http X)
+                //  cookie.setHttpOnly(true); //JavaScript 에서 쿠키정보를 읽을 수 없도록 보안처리/
+                //  cookie.setSecure(true); // Https 에서만 사용(Http X)
                     cookie.setMaxAge(-1); //사용기한 (-1: 세션 유지될 동안)
 
                     httpServletResponse.addCookie(cookie); //컨트롤러에서 넘어온 httpResponse 쿠키 추가
@@ -44,7 +44,6 @@ public class LoginService {
         }else{
             throw new RuntimeException("User Not Found");
         }
-
         //return null;
     }
 }
